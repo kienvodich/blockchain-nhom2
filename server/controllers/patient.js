@@ -10,8 +10,8 @@ const getProfiles = asyncHandler(async (req, res) => {
 })
 
 const createNewProfile = asyncHandler(async (req, res) => {
-    const { name, phone, address, diagnosis, doctor } = req.body
-    if (!name || !phone || !address || !diagnosis || !doctor) {
+    const { name, phone, address, age, card, diagnosis, doctor } = req.body
+    if (!name || !phone || !address || !age || !card || !diagnosis || !doctor) {
         return res.status(400).json({
             success: false,
             mes: 'Missing inputs'

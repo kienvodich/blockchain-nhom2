@@ -22,9 +22,6 @@ var userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
-    age: {
-        type: Number
-    },
     role: {
         type: String,
         default: 'user',

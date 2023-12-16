@@ -7,6 +7,10 @@ var patientSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
+    age: {
+        type: Number,
+        required: true,
+    },
     phone: {
         type: String,
         required: true,
@@ -17,6 +21,7 @@ var patientSchema = new mongoose.Schema({
     },
     card: {
         type: String,
+        required: true,
     },
     diagnosis: {
         type: String,

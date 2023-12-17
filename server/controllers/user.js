@@ -40,12 +40,12 @@ const login = asyncHandler(async (req, res) => {
         const accessToken = 'Bearer ' + generateAccessToken(response._id, role)
         const newRefreshToken = generateRefreshToken(response._id)
         await User.findByIdAndUpdate(response._id, { refreshToken: newRefreshToken }, { new: true })
-        res.cookie('refreshToken', newRefreshToken, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 * 1000 })
         return res.status(200).json({
             success: true,
             accessToken,
             userData,
             role: role,
+            refreshToken: newRefreshToken,
         })
     }
     else {
@@ -63,39 +63,23 @@ const getCurrent = asyncHandler(async (req, res) => {
 })
 
 const refreshAccessToken = asyncHandler(async (req, res) => {
-    const cookie = req.cookies
-    if (!cookie && !cookie?.refreshToken) {
-        throw new Error('No refresh token in cookies')
+    const { refreshToken } = req.body
+    if (!refreshToken) {
+        throw new Error('No refreshToken')
     }
-    jwt.verify(cookie.refreshToken, process.env.JWT_SECRET, async (err, decode) => {
+    jwt.verify(refreshToken, process.env.JWT_SECRET, async (err, decode) => {
         if (err) {
             return res.status(401).json({
                 success: false,
                 mes: 'Invalid refresh token'
             })
         }
-        const response = await User.findOne({ _id: decode._id, refreshToken: cookie.refreshToken })
+        const response = await User.findOne({ _id: decode._id, refreshToken: refreshToken })
         return res.status(200).json({
             success: response ? true : false,
             newAccessToken: response ?
                 'Bearer ' + generateAccessToken(response.id, response.role) : 'Refresh token not matched'
         })
-    })
-})
-
-const logout = asyncHandler(async (req, res) => {
-    const cookie = req.cookies
-    if (!cookie && !cookie?.refreshToken) {
-        throw new Error('No refresh token in cookies')
-    }
-    await User.findOneAndUpdate({ refreshToken: cookie.refreshToken }, { refreshToken: '' }, { new: true })
-    res.clearCookie('refreshToken', {
-        httpOnly: true,
-        secure: true
-    })
-    return res.status(200).json({
-        success: true,
-        mes: 'Logout is successfully'
     })
 })
 
@@ -169,7 +153,6 @@ module.exports = {
     login,
     getCurrent,
     refreshAccessToken,
-    logout,
     getUsers,
     deleteUser,
     updateUser,

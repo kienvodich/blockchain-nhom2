@@ -1,0 +1,21 @@
+.form-logout {
+  border-radius: 30px;
+  background: none;
+  position: absolute;
+  color: #d3d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.form-logout:hover {
+  color: #dededede;
+  cursor: pointer;
+}
+.form-logout .icon-logout {
+  font-size: 20px;
+}
+
+.form-logout p {
+  font-size: 20px;
+}

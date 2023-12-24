@@ -1,0 +1,30 @@
+.container-metamask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container-metamask__title {
+    margin-bottom: 10px;
+    color: #f6851b;
+}
+
+.container-metamask__title h1 {
+    font-size: 3rem;
+    text-shadow: #333 2px 3px;
+}
+
+.container-metamask__logo {
+    margin-bottom: 10px;
+}
+
+.container-metamask__btn button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #f6851b;
+    border: #f6851b 2px solid;
+    cursor: pointer;
+    background-color: #fadfc5;
+}

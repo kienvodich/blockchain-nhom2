@@ -9,6 +9,7 @@ import UserLayout from '../Components/UserLayout';
 import LayoutUserHome from '../Pages/LayoutUserHome';
 import MedicalRecord from '../Pages/MedicalRecord';
 import Contact from '../Pages/Contact';
+import MetaMask from '../Pages/MetaMask';
 
 const InitRouters = [
   {
@@ -18,6 +19,10 @@ const InitRouters = [
   {
     path: '/register',
     element: <RegisterPage />,
+  },
+  {
+    path: '/metamask',
+    element: <MetaMask />,
   },
   {
     path: '/admin',

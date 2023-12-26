@@ -10,6 +10,7 @@ Chức năng:
 + Sửa thông tin bệnh nhân
 + truy xuất thông tin bệnh nhân
 + thêm mới tài khoản
+<br></br>
 -User
 + Đăng nhập
 + Đăng ký

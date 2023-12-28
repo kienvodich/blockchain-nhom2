@@ -69,7 +69,7 @@ const MedicalRecord = () => {
       <div className={cx('search')}>
         <input
           type="text"
-          placeholder="Search by name ..."
+          placeholder="Search by phone ..."
           style={{ width: '30%' }}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -87,7 +87,7 @@ const MedicalRecord = () => {
           </tr>
         </thead>
         <tbody>
-          {profile?.map((item, index) => (
+          {profile?.filter((user) => user.phone.includes(search)).map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.age}</td>

@@ -1,6 +1,5 @@
 ﻿# blockchain-nhom2
-Chức năng:
-<br></br>
+# Chức năng:
 -Admin:
 + Đăng nhập
 + Quản lý người dùng
@@ -8,10 +7,15 @@ Chức năng:
 + Thêm bệnh nhân
 + Xóa bệnh nhân
 + Sửa thông tin bệnh nhân
-+ truy xuất thông tin bệnh nhân
-+ thêm mới tài khoản
-<br></br>
--User
++ Truy xuất thông tin bệnh nhân
++ Thêm mới tài khoản
+-User:
 + Đăng nhập
 + Đăng ký
 + Xem thông tin bệnh án
+# Cách cài đặt:
++ Server: npm i express
++ Client: npm i react-scripts
+# Cách sử dụng:
++ Server: cd server && npm start
++ Client: cd client && npm start

@@ -50,7 +50,7 @@ const ManagePatients = () => {
       <div className={cx('search')}>
         <input
           type="text"
-          placeholder="Search by name ..."
+          placeholder="Search by phone ..."
           style={{ width: '300px' }}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -71,7 +71,8 @@ const ManagePatients = () => {
             </tr>
           </thead>
           <tbody>
-            {user?.map((item, index) => (
+            {user?.filter((user) => user.phone.includes(search)
+            ).map((item, index) => (
               <tr key={index}>
                 <td className='text-nowrap'>{item.name}</td>
                 <td className='text-nowrap'>{item.age}</td>

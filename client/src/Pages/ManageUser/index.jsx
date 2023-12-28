@@ -54,10 +54,10 @@ const ManageUser = () => {
       <div className={cx('search')}>
         <input
           type="text"
-          placeholder="Search by name ..."
+          placeholder="Search by phone ..."
           style={{ width: '300px' }}
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)} date s
         />
       </div>
       <div className='overflow-auto'>
@@ -72,7 +72,7 @@ const ManageUser = () => {
             </tr>
           </thead>
           <tbody>
-            {user?.map((item, index) => (
+            {user?.filter((user) => user.phone.includes(search)).map((item, index) => (
               <tr key={index}>
                 <td>{item.name}</td>
                 <td>{item.email}</td>

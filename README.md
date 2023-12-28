@@ -7,9 +7,9 @@ Admin:
 + Thêm bệnh nhân
 + Xóa bệnh nhân
 + Sửa thông tin bệnh nhân
-+ truy xuất thông tin bệnh nhân
-+ thêm mới tài khoản
-User
++ Truy xuất thông tin bệnh nhân
++ Thêm mới tài khoản
+User:
 + Đăng nhập
 + Đăng ký
 + Xem thông tin bệnh án

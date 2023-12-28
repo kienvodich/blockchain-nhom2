@@ -1,6 +1,6 @@
 ﻿# blockchain-nhom2
 # Chức năng:
-Admin:
+-Admin:
 + Đăng nhập
 + Quản lý người dùng
 + Xóa người dùng
@@ -9,7 +9,7 @@ Admin:
 + Sửa thông tin bệnh nhân
 + Truy xuất thông tin bệnh nhân
 + Thêm mới tài khoản
-User:
+-User:
 + Đăng nhập
 + Đăng ký
 + Xem thông tin bệnh án
